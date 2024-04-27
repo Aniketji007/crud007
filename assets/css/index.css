@@ -1,0 +1,138 @@
+body,
+    body * {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    nav {
+        background: black;
+        text-align: center;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        display: flex;
+        box-sizing: border-box;
+    }
+
+    nav button {
+        padding: .5rem 1rem;
+        cursor: pointer;
+    }
+    
+    nav button.log-out{
+        margin-left: auto;
+    }
+
+    .user-data-header {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .user-data-header p {
+        border: 1px solid #00000014;
+        width: 100%;
+        text-align: center;
+        background-color: #8080801a;
+        padding: 1rem;
+        user-select: none;
+        margin-bottom: 2rem;
+    }
+    .user-data-body>div{
+        display: flex;
+        justify-content: space-around;
+        border-bottom: 1px solid #e5e5e5;
+        padding-block: .5rem;
+    }
+
+    .user-data-body>div p{
+        text-align: center;
+    }
+
+    div.form-wrapper{
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: #0000005c;
+        backdrop-filter: blur(5px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: -999999;
+        transform: scale(0);
+        transition: all .3s ease-in-out;
+    }
+    
+    div.form-wrapper.active{
+        transform: scale(1);
+        z-index: unset;
+        transition: all .6s ease-in;
+    }
+
+    .form-wrapper form div input{
+        background-color: transparent !important;
+    }
+
+    form {
+        background: white;
+        padding: 2rem 2.5rem;
+        border-radius: 9px;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 5px 5px 25px #00000033;
+        width: clamp(160px, 50vw, 400px);
+    }
+
+    form input:not([type="checkbox"],[type="radio"]),
+    form :where(select, textarea){
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    button.close-button {
+        margin: -1rem -1rem 1rem auto;
+    }
+    form h1{
+        text-align: center;
+    }
+
+    form div{
+        position: relative;
+        margin-block: .5rem;
+    }
+
+    form input::placeholder {
+        color: transparent;
+    }
+
+    form div input:where([type="text"],[type="email"],[type="password"]){
+        padding: .5rem;
+    }
+
+    form div input:where([type="text"],[type="email"],[type="password"]) ~ label{
+        position: absolute;
+        left: .5rem;
+        top: .5rem;
+        transition: all .3s ease-in-out;
+        pointer-events: none;
+    }
+
+    form div input:where([type="text"],[type="email"],[type="password"]):focus ~ label,
+    form div input:where([type="text"],[type="email"],[type="password"]):not(:placeholder-shown) ~ label{
+        top: -9px;
+        background-color: white;
+        padding-inline: .5rem;
+    }
+
+    form div.form-button{
+        display: flex;
+    }
+
+    form div.form-button button{
+        padding: .5rem;
+        cursor: pointer;
+    }
+
+    form div.form-button button:nth-child(1){
+        margin-right: auto;
+    }
